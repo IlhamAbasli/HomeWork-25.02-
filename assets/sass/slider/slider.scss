@@ -1,0 +1,74 @@
+.slider-area{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    .controllers{
+        position: absolute;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        top: 50%;
+        i{
+            width:50px;
+            cursor: pointer;
+            height: 50px;
+            color: white;
+            background-color: black;
+            display: flex;  
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            font-size: 40px;
+        }
+    }
+
+    .content{
+        display: flex;
+        gap: 20px;
+        .slider{
+            display: none;
+            margin: 230px auto;
+            border-radius: 20px;
+            overflow: hidden;
+            .caption{
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                background-color: black;
+                color: white;
+            }
+        }
+        .active{
+            animation: nextSlide;
+            animation-duration: 1.2s;
+            display: block;
+            position: static;
+        }
+
+        .active1{
+            animation: prevSlide;
+            animation-duration: 1.2s;
+            display: block;
+            position: static;
+        }
+    }
+}
+
+@keyframes nextSlide {
+    from{
+        transform: translateX(650px);
+    }
+    to{
+        transform: translateX(0);
+    }
+}
+
+
+@keyframes prevSlide {
+    from{
+        transform: translateX(-700px);
+    }
+    to{
+        transform: translateX(0);
+    }
+}
